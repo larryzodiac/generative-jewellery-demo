@@ -1,0 +1,14 @@
+@import "@material/checkbox/mixins";
+@import "@material/ripple/mixins";
+@import "colours";
+
+.checkbox-alternate {
+  @include mdc-checkbox-container-colors(
+    grey,
+    $transparent,
+    $blue,
+    $blue
+  );
+  @include mdc-checkbox-focus-indicator-color($transparent);
+  @include mdc-states-base-color($blue);
+}

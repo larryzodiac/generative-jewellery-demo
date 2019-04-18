@@ -1,0 +1,9 @@
+@import "@material/checkbox/mixins";
+@import "@material/ripple/mixins";
+@import "colours";
+
+.radio-alternate {
+  @include mdc-radio-checked-stroke-color($blue);
+  @include mdc-radio-ink-color($blue);
+  @include mdc-states-base-color($blue);
+}
