@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/generative-jewellery-demo/static/css/main.ac6bc343.chunk.css"
   },
   {
-    "revision": "fc503650ab17eacd19aa48e0cea86b6d",
+    "revision": "8244a0f2df7c43490fc5e78719ac87c6",
     "url": "/generative-jewellery-demo/index.html"
   }
 ];

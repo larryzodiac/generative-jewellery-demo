@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/generative-jewellery-demo/precache-manifest.8cc4da9fe9093ef086a4df957076f16c.js"
+  "/generative-jewellery-demo/precache-manifest.cdf2bd42043465975e2b56915d968917.js"
 );
 
 workbox.clientsClaim();
