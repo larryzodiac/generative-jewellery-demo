@@ -21,7 +21,7 @@ class Scene extends Component {
     this.getGeometry = this.getGeometry.bind(this);
     this.generateSubdivision = this.generateSubdivision.bind(this);
   }
-  
+
   componentDidMount() {
     const width = window.innerWidth;
     const height = window.innerHeight;
@@ -109,18 +109,18 @@ class Scene extends Component {
     this.mount.removeChild(this.renderer.domElement);
   }
 
-  start() {
+  start = () => {
     if (!this.frameId) {
       this.frameId = requestAnimationFrame(this.update);
     }
   }
 
-  stop() {
+  stop = () => {
     cancelAnimationFrame(this.frameId);
   }
 
   // Animation loop.
-  update() {
+  update = () => {
     this.renderer.render(
       this.scene,
       this.camera
@@ -130,16 +130,16 @@ class Scene extends Component {
   }
 
   // Resize canvas
-  handleResize () {
-    const width = this.mount.clientWidth;
-    const height = this.mount.clientHeight;
+  handleResize = () => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
     this.renderer.setSize(width, height);
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
   }
 
   // Create a geometry for use in creating a mesh
-  getGeometry(w,h) {
+  getGeometry = (w,h) => {
     let geometry;
     switch (this.props.geometry) {
       case 'Cone':
@@ -173,7 +173,7 @@ class Scene extends Component {
   }
 
   // Create a plane that receives shadows (but does not cast them)
-  getPlane(w,h) {
+  getPlane = (w,h) => {
     const geometry = new THREE.PlaneBufferGeometry(w,h);
   	const material = new THREE.MeshPhongMaterial({side:THREE.DoubleSide});
     material.color.setHex(0xffde03);
@@ -185,7 +185,7 @@ class Scene extends Component {
   }
 
   // Pass geometry to be modified then return mesh to be added to the scene
-  generateSubdivision(geometry) {
+  generateSubdivision = (geometry) => {
     // Invoke modifier
     const modifier = new SubdivisionModifier(
       this.props.subdivisions,
@@ -211,7 +211,7 @@ class Scene extends Component {
     return mesh;
   }
 
-  export(geometry) {
+  export = (geometry) => {
     const buffer = exportSTL.fromGeometry(geometry);
     const blob = new Blob([buffer], { type: exportSTL.mimeType });
     saveAs(blob, 'shape.stl');

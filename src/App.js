@@ -37,13 +37,13 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  toggleDrawer() {
+  toggleDrawer = () => {
     this.setState(prevState => ({
       drawerOpen: !prevState.drawerOpen
     }));
   }
 
-  handleChange(event, slider_value) {
+  handleChange = (event, slider_value) => {
     const id = event.target.id;
     const name = event.target.type === 'checkbox' ? 'wireframe' : event.target.name;
     const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
@@ -58,7 +58,7 @@ class App extends Component {
     }
   }
 
-  handleClick() {
+  handleClick = () => {
     this.setState(prevState => ({
       exportClicked: prevState.exportClicked + 1
     }));
