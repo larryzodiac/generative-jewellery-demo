@@ -1,0 +1,138 @@
+// ------------------------------------------------- //
+// Evan MacHale - N00150552
+// 06.01.19
+// React + Material Design Styles
+// ------------------------------------------------- //
+// https://github.com/material-components/material-components-web-react#step-3a-use-compiled-css
+// https://sass-lang.com/guide
+// ------------------------------------------------- //
+/*
+  06.01.19
+  Installed Typescript for Material:
+    npm i @types/react @types/react-dom @types/classnames @types/node typescript
+  Installed Material React components:
+    npm install @material/react-button
+  Installed Sass for Material Styles:
+    npm install -g sass
+  Added environment variable for sass:
+    SET SASS_PATH=.\node_modules
+    npm install node-sass
+  -> @import... below to use Material Design Components
+*/
+// ------------------------------------------------- //
+
+// Import MDC Sass modules + Override styles
+
+// Grid
+@import '@material/react-layout-grid/index.scss';
+// Typography
+@import '@material/react-typography/index.scss';
+// Icons
+@import '@material/react-material-icon/index.scss';
+// Icon buttons
+@import '@material/react-icon-button/index.scss';
+// Buttons
+@import '@material/react-button/index.scss';
+@import './style-overrides/react-button-overrides.scss';
+// Floating action buttons
+@import '@material/react-fab/index.scss';
+// Top app bar
+@import '@material/react-top-app-bar/index.scss';
+@import './style-overrides/react-top-app-bar-overrides';
+// Checkbox
+@import '@material/react-checkbox/index.scss';
+@import './style-overrides/react-checkbox-overrides';
+// Radio
+@import '@material/react-radio/index.scss';
+@import './style-overrides/react-radio-overrides';
+// Card
+@import '@material/react-card/index.scss';
+// Text field
+@import '@material/react-text-field/index.scss';
+// Drawer
+@import '@material/react-drawer/index.scss';
+// @import './style-overrides/react-drawer-overrides';
+// List
+@import '@material/react-list/index.scss';
+@import './style-overrides/react-list-overrides';
+// Slider
+@import "@material/slider/mdc-slider";
+
+// ------------------------------------------------- //
+
+.drawer-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.drawer-app-content {
+  flex: auto;
+  overflow: auto;
+}
+
+// Material-UI framework not MDC -> Slider
+// Only use !important on page-specific CSS that overrides foreign CSS (from external libraries, like Bootstrap or normalize.css).
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+.drawer-list-item {
+  margin: 0em 2em !important;
+}
+.drawer-slider {
+  margin: -0.8em 2em 0em 2em !important;
+}
+.slider-div {
+  // width: 100% !important;
+}
+.drawer-slider-material {
+  background-color: $blue !important;
+}
+
+.drawer-divider {
+  margin: 1.5em 0em 1.5em 0em !important;
+}
+
+.drawer-title {
+  margin: 0.2em 1em 1em 1em !important;
+}
+// ------------------------------------------------- //
+
+// material-ui slider
+// .slider {
+//   padding: 1rem 0rem;
+// }
+
+// ------------------------------------------------- //
+
+// .geometries-list-item {
+//   box-sizing: border-box;
+//   display: inline-block;
+//   margin-bottom: 16px;
+//   white-space: nowrap;
+//   cursor: pointer;
+//   outline: none;
+//   -moz-user-select: none;
+//   -moz-user-select: none;
+//   position: relative;
+//   min-width: 20px;
+//   min-height: 20px;
+//   margin-left: 0;
+//   margin-right: 16px;
+// }
+
+// .geometries-list-item {
+//   box-sizing: border-box;
+//   position: relative;
+//   display: inline-block;
+//   white-space: nowrap;
+// }
+
+// ------------------------------------------------- //
+
+.canvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
