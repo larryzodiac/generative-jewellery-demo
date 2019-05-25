@@ -1,7 +1,0 @@
-@import "@material/drawer/mixins";
-@import "colours";
-
-.list-alternate {
-  @include mdc-list-item-primary-text-ink-color($white);
-  @include mdc-list-item-graphic-ink-color($white);
-}
