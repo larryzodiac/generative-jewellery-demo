@@ -1,0 +1,7 @@
+@import "@material/slider/mixins";
+@import "colours";
+
+.slider-alternate {
+  @include mdc-slider-color-accessible($blue);
+  @include mdc-slider-focus-halo-color($transparent);
+}

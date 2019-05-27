@@ -1,0 +1,37 @@
+@import "@material/button/mixins";
+@import "@material/ripple/mixins";
+@import "colours";
+
+.form-button {
+  width: 100%;
+  @include mdc-button-filled-accessible($blue);
+  // @include mdc-button-ink-color($white);
+  @include mdc-button-outline-color($blue);
+  @include mdc-button-shape-radius(50px);
+}
+
+.form-button-alt {
+  width: 100%;
+  border: solid 1px;
+  @include mdc-button-filled-accessible($transparent);
+  @include mdc-button-ink-color($blue);
+  @include mdc-button-outline-color($blue);
+  @include mdc-button-shape-radius(50px);
+}
+
+.button-alternate {
+  width: 100%;
+  @include mdc-button-filled-accessible($blue);
+  // @include mdc-button-ink-color($white);
+  @include mdc-button-outline-color($blue);
+  @include mdc-button-shape-radius(50px);
+  // padding-bottom: 2rem;
+}
+
+.button-alternate-clear {
+  width: 100%;
+  @include mdc-button-ink-color($blue);
+  @include mdc-button-outline-color($blue);
+  @include mdc-button-shape-radius(50px);
+  // padding-bottom: 2rem;
+}

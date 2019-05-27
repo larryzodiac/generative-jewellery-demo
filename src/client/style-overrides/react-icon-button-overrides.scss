@@ -1,0 +1,24 @@
+@import "@material/icon-button/mixins";
+@import "@material/ripple/mixins";
+@import "colours";
+
+// .mdc-card {
+//     // @include mdc-icon-button-size(48px, 48px);
+// }
+
+.card-delete {
+  @include mdc-icon-button-ink-color($red);
+}
+
+.card-empty-delete {
+  @include mdc-icon-button-ink-color($red);
+}
+
+.card-play {
+  // @include mdc-icon-button-size(24px, 24px);
+  @include mdc-icon-button-ink-color($blue);
+}
+
+.card-empty-play {
+  @include mdc-icon-button-ink-color($blue);
+}

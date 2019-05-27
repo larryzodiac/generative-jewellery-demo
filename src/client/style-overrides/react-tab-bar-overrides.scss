@@ -1,0 +1,34 @@
+@import "@material/tab-bar/mixins";
+@import "colours";
+
+.tab-section {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.tab-bar-alternate {
+  // @include mdc-tab-bar-width(30em);
+  // position: absolute !important;
+  // margin-left: auto !important;
+  // margin-right: 50% !important;
+}
+
+.mdc-tab {
+  height: 64px !important;
+}
+
+.mdc-tab span {
+  color: $blue !important;
+}
+
+.mdc-tab-indicator__content--underline {
+  background-color: $blue !important;
+}
+
+.mdc-tab__ripple::before, .mdc-tab__ripple::after {
+  background-color: $yellow !important;
+}
+
+.mdc-tab-scroller__scroll-area--scroll {
+  overflow-x: hidden !important;
+}

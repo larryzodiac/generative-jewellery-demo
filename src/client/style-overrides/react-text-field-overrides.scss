@@ -1,0 +1,31 @@
+@import "@material/textfield/mixins";
+@import "colours";
+
+.form-text-field {
+  width: 100%;
+  @include mdc-text-field-ink-color(black);
+  @include mdc-text-field-label-color(gray);
+  @include mdc-text-field-caret-color($blue);
+  @include mdc-text-field-shape-radius((15px, 0px));
+  @include mdc-text-field-bottom-line-color($blue);
+  @include mdc-text-field-hover-bottom-line-color($blue);
+  @include mdc-text-field-line-ripple-color($blue);
+}
+
+.drawer-text-field {
+  margin-top: 0.1em !important;
+  height: 90% !important;
+  @include mdc-text-field-focused-outline-color($blue);
+  @include mdc-text-field-outline-shape-radius(50px);
+  @include mdc-text-field-outline-color($blue);
+  @include mdc-text-field-hover-outline-color($blue);
+  @include mdc-text-field-label-color($blue);
+}
+
+.drawer-text-field div {
+  border-width: 2px !important;
+}
+
+.drawer-text-field-input {
+  padding-left: 2.5em !important;
+}

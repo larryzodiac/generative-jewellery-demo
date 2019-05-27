@@ -1,0 +1,204 @@
+/*
+  Evan MacHale - N00150552
+  25.05.19
+  App.scss
+*/
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600');
+@import "style-overrides/colours";
+
+// fonts
+$font-family: 'IBM Plex Sans', sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-heavy: 600;
+$font-height: 1.5;
+
+:root {
+// --mdc-theme-primary: $yellow;
+// --mdc-theme-secondary: $blue;
+// --mdc-theme-on-primary: $blue;
+// --mdc-theme-on-secondary: $blue;
+// --mdc-theme-surface: $white !important;
+// --mdc-theme-on-surface: $pink;
+}
+
+// MDC Web React
+@import '@material/react-button/index.scss';
+@import './style-overrides/react-button-overrides';
+@import '@material/react-top-app-bar/index.scss';
+@import './style-overrides/react-top-app-bar-overrides';
+@import '@material/react-material-icon/index.scss';
+@import '@material/react-layout-grid/index.scss';
+@import '@material/react-text-field/index.scss';
+@import './style-overrides/react-text-field-overrides';
+@import '@material/react-typography/index.scss';
+@import '@material/react-radio/index.scss';
+@import './style-overrides/react-radio-overrides';
+@import '@material/react-list/index.scss';
+@import '@material/react-checkbox/index.scss';
+@import './style-overrides/react-checkbox-overrides';
+@import '@material/react-drawer/index.scss';
+@import '@material/react-icon-button/index.scss';
+@import './style-overrides/react-icon-button-overrides';
+@import '@material/react-card/index.scss';
+@import '@material/react-tab-bar/index.scss';
+@import './style-overrides/react-tab-bar-overrides';
+@import '@material/react-tab-scroller/index.scss';
+@import '@material/react-tab/index.scss';
+@import '@material/react-tab-indicator/index.scss';
+
+// MDC Web
+@import "@material/slider/mdc-slider";
+@import './style-overrides/slider-overrides';
+
+.mdc-typography,
+.mdc-text-field__input {
+  font-family: $font-family;
+}
+
+.type-light {
+  font-weight: $font-weight-light;
+}
+
+.type-regular {
+  font-weight: $font-weight-regular;
+}
+
+.type-heavy {
+  font-weight: $font-weight-heavy;
+}
+
+/*
+  MDC Drawer Requirements
+*/
+
+.drawer-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.drawer-app-content {
+  flex: auto;
+  overflow: auto;
+}
+
+.top-app-bar-fix-adjust {
+  display: flex;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.mdc-drawer--dismissible {
+  top: auto;
+}
+
+.mdc-layout-grid {
+  margin: 0px 0px 0px 0px !important;
+  width: 100%;
+}
+
+.mdc-card {
+  border-radius: 20px 0px 0px 0px !important;
+}
+
+/*
+  Custom Styles
+*/
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.title {
+  margin: 0rem;
+}
+
+.top-app-bar-grid {
+  margin: 0rem !important;
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+
+.form-or {
+  text-align: center;
+}
+
+.error {
+  font-family: sans-serif;
+  color: red;
+}
+
+.drawer-alternate {
+  height: calc(100% - 64px);
+}
+
+.drawer-group {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.drawer-divider {
+  margin: 2em 0em 2em 0em;
+  border-bottom-color: rgba(0, 0, 0, 0.12) !important;
+  border: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.drawer-list-item {
+  margin: -0.5em 1em !important;
+}
+
+.slider-list-item {
+  margin: -0.5em 1em -1em 1em !important;
+}
+
+.button-list-item {
+  margin: 0.5em 1em 0em 1em !important;
+}
+
+.drawer-slider {
+  margin: -0.8em 0em 0em 0em !important;
+}
+
+.mdc-slider:not(.mdc-slider--disabled) .mdc-slider__pin {
+  color: $transparent !important;
+  background-color: $transparent !important;
+}
+
+.saves-header {
+  text-align: right !important;
+  margin-top: 3em !important;
+  margin-bottom: 1em !important;
+}
+
+.mdc-card {
+  margin-top: 0em !important;
+  margin-bottom: 2.5em !important;
+  box-shadow: none !important;
+}
+
+.mdc-card p {
+  margin-left: 1em !important;
+}
+
+.card-empty {
+  background-color: $transparent !important;
+  border: solid 1px $white !important;
+}
+
+.card-empty p {
+  height: 24px !important;
+}
+
+.canvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
