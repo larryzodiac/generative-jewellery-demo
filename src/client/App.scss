@@ -47,6 +47,8 @@ $font-height: 1.5;
 @import '@material/react-tab-scroller/index.scss';
 @import '@material/react-tab/index.scss';
 @import '@material/react-tab-indicator/index.scss';
+@import '@material/react-linear-progress/index.scss';
+@import './style-overrides/react-linear-progress-overrides';
 
 // MDC Web
 @import "@material/slider/mdc-slider";
@@ -109,7 +111,7 @@ $font-height: 1.5;
 */
 
 a {
-  color: #000;
+  color: $blue;
   text-decoration: none;
 }
 
@@ -121,6 +123,11 @@ a {
   margin: 0rem !important;
   padding-top: 0rem !important;
   padding-bottom: 0rem !important;
+}
+
+.form {
+  margin-top: 10vh;
+  height: 90vh;
 }
 
 .form-or {

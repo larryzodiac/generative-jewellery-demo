@@ -6,7 +6,7 @@
   @include mdc-text-field-ink-color(black);
   @include mdc-text-field-label-color(gray);
   @include mdc-text-field-caret-color($blue);
-  @include mdc-text-field-shape-radius((15px, 0px));
+  @include mdc-text-field-shape-radius((0px, 15px));
   @include mdc-text-field-bottom-line-color($blue);
   @include mdc-text-field-hover-bottom-line-color($blue);
   @include mdc-text-field-line-ripple-color($blue);

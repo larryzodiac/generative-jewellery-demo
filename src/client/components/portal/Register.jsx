@@ -10,7 +10,8 @@ import { Redirect } from 'react-router-dom';
 // Material Design Components
 import { Row, Cell } from '@material/react-layout-grid';
 import Button from '@material/react-button';
-import { Headline4 } from '@material/react-typography';
+import { Headline3 } from '@material/react-typography';
+import MaterialIcon from '@material/react-material-icon';
 // My Components
 import Text from '../misc/Text';
 
@@ -121,7 +122,10 @@ class Register extends Component {
             <form onSubmit={this.handleSubmit}>
               <Row>
                 <Cell columns={12}>
-                  <Headline4 className="type-heavy">Register</Headline4>
+                  <Headline3>
+                    Register
+                    <MaterialIcon className="" icon="arrow_downward" />
+                  </Headline3>
                 </Cell>
                 <Cell columns={12}>
                   <Text name="username" label="Username" value={username} error={usernameError} onChange={this.handleInputChange} />

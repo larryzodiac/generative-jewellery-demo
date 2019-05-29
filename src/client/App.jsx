@@ -8,11 +8,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import './App.scss';
-// Material Components
 // My Components
 import Provider from './Provider';
 import Portal from './components/portal/Portal';
 import World from './components/world/World';
+import Loading from './components/misc/Loading';
 
 /*
   Context
@@ -46,7 +46,11 @@ class App extends Component {
           });
         }
       })
-      .catch(() => this.setState({ loginSuccess: false }));
+      .catch((err) => {
+        if (err) {
+          this.setState({ loginSuccess: false });
+        }
+      });
   }
 
   setLoginSuccess(id) {
@@ -95,6 +99,7 @@ class App extends Component {
             )}
           />
           <Route path="/logout" render={this.logout} />
+          <Route path="/loading" render={props => <Loading {...props} />} />
         </BrowserRouter>
       </Provider>
     );

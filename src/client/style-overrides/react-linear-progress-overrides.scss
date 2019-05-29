@@ -1,0 +1,14 @@
+@import "@material/linear-progress/mixins";
+@import "@material/ripple/mixins";
+@import "colours";
+
+.linear-progress-alternative {
+    @include mdc-linear-progress-bar-color($blue);
+    @include mdc-linear-progress-buffer-color($white);
+    margin-top: 48vh !important;
+}
+
+.loading-grid {
+  height: 100vh !important;
+  padding: 0em !important;
+}

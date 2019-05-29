@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // Material Design Components
 import { Grid, Row, Cell } from '@material/react-layout-grid';
-import { Body1, Headline2 } from '@material/react-typography';
+import { Body1, Headline1, Headline5 } from '@material/react-typography';
 import Button from '@material/react-button';
 // My Components
 import Login from './Login';
@@ -40,8 +40,8 @@ class Portal extends Component {
     return (
       <Grid>
         <Row>
-          <Cell desktopColumns={1} tabletColumns={1} />
-          <Cell desktopColumns={10} tabletColumns={8} phoneColumns={4}>
+          <Cell desktopColumns={2} tabletColumns={1} />
+          <Cell desktopColumns={8} tabletColumns={8} phoneColumns={4}>
 
             <Row>
 
@@ -49,45 +49,53 @@ class Portal extends Component {
 
                 <Row>
                   <Cell desktopColumns={6} tabletColumns={4} phoneColumns={4}>
-                    <Headline2 className="type-heavy">Generative Jewellery</Headline2>
+                    <Headline1 className="type-heavy">Generative Jewellery</Headline1>
                   </Cell>
                 </Row>
                 <Row>
                   <Cell columns={12}>
-                    <Body1>Generative Jewellery</Body1>
+                    <Headline5>
+                      <a href="http://www.iadt.ie/courses/creative-computing">Dún Laoghaire's Institue of Art, Design & Technology</a>
+                      <br />
+                      Final Year Research Project Demo.
+                    </Headline5>
+                    <Headline5>
+                      An investigation into generative design using subdivision
+                       surface algorithms in the form of a jewellery designer application.
+                    </Headline5>
+                    <Headline5>
+                      Made by
+                      <a href="https://github.com/larryzodiac"> Evan MacHale</a>
+                      .
+                    </Headline5>
                   </Cell>
                 </Row>
-
-              </Cell>
-
-              <Cell desktopColumns={1} tabletColumns={1} />
-
-              <Cell desktopColumns={4} tabletColumns={4} phoneColumns={4}>
-
-                <Row>
-                  <Cell columns={12}>
-                    {whichPortal ? (
-                      <Login
-                        {...this.props}
-                        setLoginSuccess={setLoginSuccess}
-                      />
-                    ) : (
-                      <Register />
-                    )}
-                  </Cell>
-                </Row>
-                <Row>
-                  <Cell columns={12}>
-                    <Body1 className="form-or">or</Body1>
-                  </Cell>
-                </Row>
-                <Row>
-                  <Cell columns={12}>
-                    <Button className="form-button-alt" onClick={this.switchPortal}>
-                      {whichPortal ? 'Register' : 'Login'}
-                    </Button>
-                  </Cell>
-                </Row>
+                <div className="form">
+                  <Row>
+                    <Cell columns={9}>
+                      {whichPortal ? (
+                        <Login
+                          {...this.props}
+                          setLoginSuccess={setLoginSuccess}
+                        />
+                      ) : (
+                        <Register />
+                      )}
+                    </Cell>
+                  </Row>
+                  <Row>
+                    <Cell columns={9}>
+                      <Body1 className="form-or">or</Body1>
+                    </Cell>
+                  </Row>
+                  <Row>
+                    <Cell columns={9}>
+                      <Button className="form-button-alt" onClick={this.switchPortal}>
+                        {whichPortal ? 'Register' : 'Login'}
+                      </Button>
+                    </Cell>
+                  </Row>
+                </div>
 
               </Cell>
 
@@ -96,7 +104,7 @@ class Portal extends Component {
             </Row>
 
           </Cell>
-          <Cell desktopColumns={1} tabletColumns={1} />
+          <Cell desktopColumns={2} tabletColumns={1} />
         </Row>
       </Grid>
     );

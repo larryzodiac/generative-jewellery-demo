@@ -18,6 +18,7 @@ import IconButton, { IconToggle } from '@material/react-icon-button';
 import { Headline4, Body1 } from '@material/react-typography';
 // My Components
 import SavesCard from '../misc/SavesCard';
+import Loading from '../misc/Loading';
 
 /*
   Saves displays data for the logged in user
@@ -28,6 +29,7 @@ class Saves extends Component {
     super(props);
     this.state = {
       weights: [],
+      loading: true,
     };
     this.fetchWeights = this.fetchWeights.bind(this);
     this.deleteWeights = this.deleteWeights.bind(this);
@@ -41,10 +43,21 @@ class Saves extends Component {
     const { id } = this.props;
     axios.get(`api/users/${id}`)
       .then((response) => {
-        // console.log(response.data.weights);
-        this.setState({ weights: response.data.weights });
+        this.setState({ loading: true });
+        if (response.status === 200) {
+          this.setState({
+            weights: response.data.weights,
+            loading: false,
+          });
+        }
       })
-      .catch(error => console.log(error));
+      .catch((err) => {
+        if (err) {
+          this.setState({
+            loading: false,
+          });
+        }
+      });
   }
 
   deleteWeights(id) {
@@ -59,7 +72,7 @@ class Saves extends Component {
   }
 
   render() {
-    const { weights } = this.state;
+    const { weights, loading } = this.state;
     const { id, loadWeights } = this.props;
     const weightsList = weights.map(w => (
       <SavesCard
