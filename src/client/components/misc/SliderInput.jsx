@@ -10,10 +10,15 @@ import PropTypes from 'prop-types';
 import { ListItem, ListItemText, ListItemMeta } from '@material/react-list';
 import { MDCSlider } from '@material/slider';
 
+// let slider;
+
 class SliderInput extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
     this.sliderRef = React.createRef();
+    this.layout = true;
+    this.slider = undefined;
   }
 
   componentDidMount() {
@@ -21,7 +26,12 @@ class SliderInput extends React.Component {
     this.slider = new MDCSlider(this.sliderRef.current);
     this.slider.target = { type: 'slider', name };
     this.slider.listen('MDCSlider:change', () => onChange(this.slider));
-    // this.slider.layout();
+    this.slider.layout();
+    this.forceUpdate(); // Bad..
+  }
+
+  componentDidUpdate() {
+    this.slider.layout();
   }
 
   render() {
